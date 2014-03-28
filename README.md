@@ -12,3 +12,7 @@ The file will be called: OperaSpeedDial.html
 
 Point a browser of your choice at the file via the bookmark html import. Have your speed dial from opera as bookmarks in another browser!
 Browse your stuffs.
+
+I have used following 3rd party work in this:
+SQLite libs are from: http://www.nuget.org/packages/System.Data.SQLite
+SQLiteDatabase class is from: http://jpreecedev.com/2013/08/07/getting-started-with-sqlite-and-c/
