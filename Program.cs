@@ -118,21 +118,27 @@ namespace OperaSDExporter
                     #endregion
 
                     //Construct html string for the bookmark import file
-                    string bookmarkFile = "<!DOCTYPE NETSCAPE-Bookmark-file-1><META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=UTF-8\"><TITLE>Bookmarks</TITLE><H1>Opera 15+ SpeedDial</H1><DL><p>" + Environment.NewLine;
+                    string bookmarkFile = "<!DOCTYPE NETSCAPE-Bookmark-file-1><META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=UTF-8\"><TITLE>Bookmarks</TITLE>"
+                        + Environment.NewLine + "<H1>Opera 15+ SpeedDial</H1>"
+                        + Environment.NewLine + "<DL><p>" + Environment.NewLine;
+
+                    //Add overall Opera SD Export Folder 
+                    bookmarkFile += "<DT><H3 FOLDED>Opera SD</H3>"+ Environment.NewLine +"<DL><p>";
 
                     foreach (var item in BookmarkItems)
                     {
                         if (item is Bookmark)
                         {
-                            bookmarkFile += BookmarkString(item as Bookmark) + Environment.NewLine;
+                            bookmarkFile += BookmarkString(item as Bookmark);
                         }
                         else if (item is BookmarkFolder)
                         {
-                            bookmarkFile += BookmarkFolderString(item as BookmarkFolder) + Environment.NewLine;
+                            bookmarkFile += BookmarkFolderString(item as BookmarkFolder);
                         }
                     }
 
-                    bookmarkFile += "</DL><p>";
+                    //Close overall file and voerall folder
+                    bookmarkFile += Environment.NewLine + "<DL><p>" + Environment.NewLine + "</DL><p>";
 
                     string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                     path = Path.Combine(path, "OperaSpeedDial.html");
@@ -152,20 +158,18 @@ namespace OperaSDExporter
         //format folder into html string
         private static string BookmarkFolderString(BookmarkFolder bookmarkFolder)
         {
-            string result = "<DT><H3>" + bookmarkFolder.Name + "</H3><DL><p>" + Environment.NewLine;
+            string result = "<DT><H3 FOLDED>" + bookmarkFolder.Name + "</H3>" + Environment.NewLine + "<DL><p>" + Environment.NewLine;
 
             foreach (var item in bookmarkFolder.Bookmarks)
-                result += BookmarkString(item) + Environment.NewLine;
+                result += BookmarkString(item);
 
-            result += "</DL><p>";
-
-            return result;
+            return result += "</DL><p>" + Environment.NewLine;
         }
 
         //Format bookmark into the html string
         private static string BookmarkString(Bookmark bookmark)
         {
-            return "<DT><A HREF=\"" + bookmark.URL + "\">" + bookmark.Name + "</A>";
+            return "<DT><A HREF=\"" + bookmark.URL + "\">" + bookmark.Name + "</A>" + Environment.NewLine;
         }
     }
 }
