@@ -13,6 +13,11 @@ The file will be called: OperaSpeedDial.html
 Point a browser of your choice at the file via the bookmark html import. Have your speed dial from opera as bookmarks in another browser!
 Browse your stuffs.
 
+You can download compiled executable from: http://datazbytes.net/wp-content/uploads/2014/03/Opera-SD-Exporter.rar
+
+I have tested this on Windows 8 and 7 and tested the exported data with Firefox and Maxthon browsers.
+Windows XP is not supported due to .Net 4.5
+
 I have used following 3rd party work in this:
 SQLite libs are from: http://www.nuget.org/packages/System.Data.SQLite
 SQLiteDatabase class is from: http://jpreecedev.com/2013/08/07/getting-started-with-sqlite-and-c/
