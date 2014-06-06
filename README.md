@@ -1,10 +1,11 @@
 OperaSpeedDialExporter
 ======================
 
-As the name suggests, this tool can export items from Opera 15+ Speed dial into HTML file thats compatible with importers in Firefox, Maxthon, Chrome etc
+As the name suggests, this tool can export items from Opera 15+ Speed dial into HTML file thats compatible with bookmark importers in Firefox, Maxthon, Chrome etc
 
-To use tha tool:
+To use the tool:
 Build it.
+Or download already built executable/libs from: http://datazbytes.net/wp-content/uploads/2014/03/Opera-SD-Exporter.rar
 Launch via OperaSDExporter.exe
 It will ask you to navigate it to where the opera's speed dial database is, usually its in location like this: "C:\Users\Username\AppData\Roaming\Opera Software\Opera Developer\favorites.db"
 After that the tool will go through it and generate an HTML file to your desktop. 
@@ -12,8 +13,6 @@ The file will be called: OperaSpeedDial.html
 
 Point a browser of your choice at the file via the bookmark html import. Have your speed dial from opera as bookmarks in another browser!
 Browse your stuffs.
-
-You can download compiled executable from: http://datazbytes.net/wp-content/uploads/2014/03/Opera-SD-Exporter.rar
 
 I have tested this on Windows 8 and 7 and tested the exported data with Firefox and Maxthon browsers.
 Windows XP is not supported due to .Net 4.5
